@@ -2,11 +2,12 @@ async function fetchUserData() {
     const apiUrl = 'https://jsonplaceholder.typicode.com/users';
     const dataContainer = document.getElementById('api-data');
 
-    async function fetchUserData() {
-        const apiUrl = 'https://jsonplaceholder.typicode.com/users';
-        const dataContainer = document.getElementById('api-data');
+   try{
+    const response= await fetch(apiUrl)
+        const user= await response.json;
 
-        const userList = document.createElement('ul');
+        dataContainer.innerHTML("Fetching user data");
+        const userList= document.createElement('ul');
 
         users.forEach(user => {
             const listItem = document.createElement('li');
